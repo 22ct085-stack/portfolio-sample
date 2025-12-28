@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portfolio</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-card">
+                    <div class="editable-field">
+                        <h3 id="student-name">Your Name</h3>
+                        <button class="edit-btn" onclick="editAbout('name')">Edit</button>
+                    </div>
+                    <div class="editable-field">
+                        <p id="student-title">Student / Developer</p>
+                        <button class="edit-btn" onclick="editAbout('title')">Edit</button>
+                    </div>
+                    <div class="editable-field">
+                        <p id="student-bio">A passionate student dedicated to learning and creating amazing projects.</p>
+                        <button class="edit-btn" onclick="editAbout('bio')">Edit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills</h2>
+                <button class="add-btn" onclick="openModal('skill')">+ Add Skill</button>
+            </div>
+            <div id="skills-list" class="items-grid"></div>
+        </div>
+    </section>
+
+    <section id="education" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Education</h2>
+                <button class="add-btn" onclick="openModal('education')">+ Add Education</button>
+            </div>
+            <div id="education-list" class="items-list"></div>
+        </div>
+    </section>
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Projects</h2>
+                <button class="add-btn" onclick="openModal('project')">+ Add Project</button>
+            </div>
+            <div id="projects-list" class="items-grid"></div>
+        </div>
+    </section>
+
+    <section id="achievements" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Achievements</h2>
+                <button class="add-btn" onclick="openModal('achievement')">+ Add Achievement</button>
+            </div>
+            <div id="achievements-list" class="items-list"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Student Portfolio. All rights reserved.</p>
+    </footer>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Add Item</h2>
+            <form id="modal-form" onsubmit="handleSubmit(event)">
+                <div id="form-fields"></div>
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" onclick="closeModal()">Cancel</button>
+                    <button type="submit" class="submit-btn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="about-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAboutModal()">&times;</span>
+            <h2 id="about-modal-title">Edit</h2>
+            <form id="about-form" onsubmit="handleAboutSubmit(event)">
+                <div class="form-group">
+                    <label id="about-label">Field</label>
+                    <input type="text" id="about-input" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" onclick="closeAboutModal()">Cancel</button>
+                    <button type="submit" class="submit-btn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
